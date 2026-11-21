@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Zayra</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #E8F5E9;
+            color: #243247;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00695C, #00A86B);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #D1FAE5;
+        }
+
+        nav {
+            background: #064E3B;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #6EE7B7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #047857;
+            margin-bottom: 20px;
+            border-left: 5px solid #10B981;
+            padding-left: 12px;
+        }
+
+        .profile {
+            text-align: justify;
+            line-height: 1.9;
+        }
+
+        .profile p {
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .info-card {
+            background: #ECFDF5;
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid #D1FAE5;
+        }
+
+        .info-card strong {
+            display: block;
+            color: #047857;
+            margin-bottom: 8px;
+        }
+
+        .experience {
+            border-left: 3px solid #10B981;
+            padding-left: 20px;
+        }
+
+        .experience h3 {
+            color: #065F46;
+            margin-bottom: 8px;
+        }
+
+        .experience p {
+            line-height: 1.7;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #047857;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        /* Botones de acción */
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 30px 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-pdf {
+            background: #065F46;
+            color: white;
+        }
+
+        .btn-pdf:hover {
+            background: #047857;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1DA851;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #064E3B;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            color: #D1FAE5;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            section {
+                padding: 22px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Configuración para imprimir o guardar en PDF */
+        @media print {
+
+            body {
+                background: white !important;
+                color: black;
+            }
+
+            nav,
+            .buttons-container {
+                display: none !important;
+            }
+
+            header {
+                background: #047857 !important;
+                color: white !important;
+                padding: 25px !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            section {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                margin-bottom: 15px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .skill {
+                background: #047857 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            footer {
+                background: #064E3B !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Zayra</h1>
+        <p>Administradora Tecnológica | Estudiante del ITM</p>
+    </header>
+
+    <nav>
+        <a href="#perfil">Perfil</a>
+        <a href="#datos">Datos personales</a>
+        <a href="#formacion">Formación</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#habilidades">Habilidades</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="perfil">
+            <h2>Perfil Profesional</h2>
+
+            <div class="profile">
+                <p>
+                    Soy estudiante de sexto semestre de Administración Tecnológica
+                    en el Instituto Tecnológico Metropolitano (ITM), con experiencia
+                    en análisis de costos. Me caracterizo por mi interés en los procesos
+                    administrativos, el análisis de información y la mejora continua.
+                    Busco fortalecer mis conocimientos y habilidades para aportar
+                    al crecimiento organizacional, mediante una gestión eficiente,
+                    estratégica y orientada a resultados.
+                </p>
+
+                <p>
+                    Es un ciudadano global que cuenta con formación integral,
+                    con cualidades éticas y de autonomía para su desarrollo profesional,
+                    con capacidad para planear, organizar, dirigir, controlar y evaluar
+                    los procesos de gestión del conocimiento, tecnología e innovación,
+                    alineándolos con la estrategia para el logro de los objetivos de las
+                    organizaciones en las que interviene, lo cual le permite tomar
+                    decisiones en contextos complejos, dinámicos e inciertos.
+                </p>
+            </div>
+        </section>
+
+        <section id="datos">
+            <h2>Datos Personales</h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <strong>Nombre</strong>
+                    Zayra
+                </div>
+
+                <div class="info-card">
+                    <strong>Documento de identidad</strong>
+                    107526252
+                </div>
+
+                <div class="info-card">
+                    <strong>Edad</strong>
+                    25 años
+                </div>
+
+                <div class="info-card">
+                    <strong>Dirección</strong>
+                    Calle 58 #28-42
+                </div>
+
+                <div class="info-card">
+                    <strong>Correo electrónico</strong>
+                    zayrapalaciod@gmail
+                </div>
+
+                <div class="info-card">
+                    <strong>Perfil profesional</strong>
+                    Administradora Tecnológica
+                </div>
+
+            </div>
+        </section>
+
+        <section id="formacion">
+            <h2>Formación Académica</h2>
+
+            <div class="experience">
+                <h3>Administración Tecnológica</h3>
+                <p><strong>Institución:</strong> Instituto Tecnológico Metropolitano (ITM)</p>
+                <p><strong>Semestre:</strong> Sexto semestre en curso</p>
+                <p>
+                    Formación orientada a la administración, gestión de organizaciones,
+                    procesos tecnológicos, análisis y toma de decisiones empresariales.
+                </p>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiencia Laboral</h2>
+
+            <div class="experience">
+                <h3>Analista de Costos</h3>
+                <p><strong>Empresa:</strong> Flamingo</p>
+                <p>
+                    Experiencia en el área de análisis de costos, apoyando procesos
+                    de revisión, seguimiento y análisis de información para contribuir
+                    a la gestión administrativa y financiera de la organización.
+                </p>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+
+            <div class="skills">
+                <span class="skill">Análisis de costos</span>
+                <span class="skill">Gestión administrativa</span>
+                <span class="skill">Análisis de información</span>
+                <span class="skill">Organización</span>
+                <span class="skill">Trabajo en equipo</span>
+                <span class="skill">Aprendizaje continuo</span>
+                <span class="skill">Gestión empresarial</span>
+            </div>
+        </section>
+
+        <!-- BOTONES DE ACCIÓN -->
+        <div class="buttons-container">
+
+            <!-- Botón para descargar portafolio en PDF -->
+            <button class="btn btn-pdf" onclick="descargarPDF()">
+                📄 Descargar portafolio en PDF
+            </button>
+
+            <!-- Botón para contactar por WhatsApp -->
+            <a
+                class="btn btn-whatsapp"
+                href="https://wa.me/573000000000?text=Hola%20Zayra%2C%20vi%20tu%20portafolio%20profesional%20y%20me%20gustar%C3%ADa%20contactarte."
+                target="_blank"
+                rel="noopener noreferrer">
+                💬 Contactarme por WhatsApp
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <h3>Portafolio Profesional - Zayra</h3>
+        <p>Estudiante de Administración Tecnológica | ITM</p>
+        <p>© 2026 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Función para generar el PDF
+        function descargarPDF() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
