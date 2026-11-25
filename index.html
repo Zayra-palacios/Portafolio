@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional | Zayra Catalina Palacios Robledo</title>
+    <!-- Tipografías elegantes y profesionales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --military-dark: #253326;
+            --military-main: #3B4D3B;
+            --military-light: #526952;
+            --mint-accent: #98D1B1;
+            --mint-soft: #EBF5EF;
+            --mint-border: #C5E4D3;
+            --bg-page: #F6F9F7;
+            --text-dark: #1E261F;
+            --text-muted: #525E53;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Barra superior de acciones */
+        .top-bar {
+            background-color: var(--military-dark);
+            color: var(--white);
+            padding: 0.75rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .top-bar-brand {
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            color: var(--mint-accent);
+        }
+
+        .btn-pdf {
+            background-color: var(--mint-accent);
+            color: var(--military-dark);
+            border: none;
+            padding: 0.55rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.25s ease;
+        }
+
+        .btn-pdf:hover {
+            background-color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(152, 209, 177, 0.35);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1040px;
+            margin: 2.5rem auto;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(37, 51, 38, 0.08);
+            border: 1px solid var(--mint-border);
+        }
+
+        /* Encabezado / Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--military-dark) 0%, var(--military-main) 100%);
+            color: var(--white);
+            padding: 3.5rem 3rem;
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--mint-accent), var(--military-light));
+        }
+
+        .profile-photo-wrapper {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, var(--mint-accent), rgba(255,255,255,0.2));
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 50%;
+            display: block;
+            background-color: var(--military-light);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(152, 209, 177, 0.18);
+            color: var(--mint-accent);
+            border: 1px solid rgba(152, 209, 177, 0.4);
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            line-height: 1.15;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #DCECE2;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: background 0.2s ease;
+        }
+
+        .contact-pill:hover {
+            background-color: rgba(152, 209, 177, 0.25);
+            border-color: var(--mint-accent);
+        }
+
+        .contact-pill i {
+            color: var(--mint-accent);
+        }
+
+        /* Cuerpo del Portafolio */
+        .main-content {
+            padding: 3rem;
+        }
+
+        .section {
+            margin-bottom: 2.75rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--mint-soft);
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background-color: var(--mint-soft);
+            color: var(--military-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            color: var(--military-dark);
+            font-weight: 700;
+        }
+
+        /* Acerca de mí */
+        .about-box {
+            background-color: var(--mint-soft);
+            border-left: 4px solid var(--military-main);
+            padding: 1.5rem 1.75rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.1rem;
+        }
+
+        .skill-tag {
+            background-color: var(--white);
+            color: var(--military-main);
+            border: 1px solid var(--mint-border);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.83rem;
+            font-weight: 600;
+        }
+
+        /* Grid de 2 columnas para Formación y Experiencia */
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border: 1px solid var(--mint-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 77, 59, 0.07);
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--military-main);
+            background-color: var(--mint-soft);
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            margin-bottom: 0.65rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--military-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .card-org {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--military-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .card-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Línea de tiempo de Proyectos (Pasado, Presente y Futuro) */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .timeline-card {
+            background: linear-gradient(180deg, var(--mint-soft) 0%, var(--white) 100%);
+            border: 1px solid var(--mint-border);
+            border-top: 4px solid var(--military-main);
+            border-radius: 10px;
+            padding: 1.4rem;
+        }
+
+        .timeline-card.featured {
+            border-top-color: var(--mint-accent);
+            background: linear-gradient(180deg, #E2F2E8 0%, var(--white) 100%);
+        }
+
+        .timeline-phase {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--military-main);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--military-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--military-dark);
+            color: #C7D9CC;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .footer span {
+            color: var(--mint-accent);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+            }
+            .profile-photo-wrapper {
+                margin: 0 auto;
+                width: 170px;
+                height: 170px;
+            }
+            .contact-pills {
+                justify-content: center;
+            }
+            .grid-two, .timeline {
+                grid-template-columns: 1fr;
+            }
+            .main-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Estilos exclusivos para exportación a PDF / Impresión */
+        @media print {
+            body {
+                background-color: var(--white);
+            }
+            .top-bar {
+                display: none !important;
+            }
+            .container {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            .hero {
+                padding: 2rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .about-box, .card-tag, .section-icon, .timeline-card, .footer {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .card, .timeline-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de herramientas superior -->
+    <header class="top-bar">
+        <div class="top-bar-brand">
+            <i class="fa-solid fa-leaf"></i> PORTAFOLIO PROFESIONAL
+        </div>
+        <button class="btn-pdf" onclick="exportarPDF()" title="Guardar o imprimir hoja de vida en PDF">
+            <i class="fa-solid fa-file-pdf"></i> Exportar en PDF
+        </button>
+    </header>
+
+    <!-- Contenedor principal de la Hoja de Vida -->
+    <main class="container">
+        
+        <!-- Encabezado con Fotografía y Contacto -->
+        <section class="hero">
+            <div class="profile-photo-wrapper">
+                <!-- Asegúrate de guardar tu foto como "perfil.jpg" en la misma carpeta del repositorio -->
+                <img src="perfil.jpg" alt="Fotografía profesional de Zayra Catalina Palacios Robledo" class="profile-photo" onerror="this.src='https://via.placeholder.com/300x300/3B4D3B/98D1B1?text=Zayra+Palacios'">
+            </div>
+            
+            <div>
+                <span class="hero-badge">Administración Tecnológica • ITM</span>
+                <h1 class="hero-name">Zayra Catalina Palacios Robledo</h1>
+                <p class="hero-subtitle">Estudiante de Sexto Semestre en Administración Tecnológica | Especialista en Servicio al Cliente y Redacción Creativa</p>
+                
+                <div class="contact-pills">
+                    <a href="tel:+573145874566" class="contact-pill">
+                        <i class="fa-solid fa-phone"></i> 314 587 4566
+                    </a>
+                    <a href="https://wa.me/573145874566" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+                    </a>
+                    <a href="https://instagram.com/ZayraPalacios" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                        <i class="fa-brands fa-instagram"></i> @ZayraPalacios
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenido -->
+        <div class="main-content">
+
+            <!-- Acerca de mí -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <h2 class="section-title">Acerca de Mí</h2>
+                </div>
+                <div class="about-box">
+                    <p>
+                        Soy estudiante de sexto semestre de <strong>Administración Tecnológica en el Instituto Tecnológico Metropolitano (ITM)</strong> y cuento con <strong>2 años de experiencia en el área de atención al cliente</strong>. Me destaco por mis fortalezas en la redacción, el trabajo colaborativo en equipo y la creatividad para aportar soluciones efectivas y empáticas orientadas a la calidad del servicio y la gestión organizacional.
+                    </p>
+                    <div class="skills-tags">
+                        <span class="skill-tag"><i class="fa-solid fa-pen-nib"></i> Redacción y Ortografía</span>
+                        <span class="skill-tag"><i class="fa-solid fa-users"></i> Trabajo en Grupo</span>
+                        <span class="skill-tag"><i class="fa-solid fa-lightbulb"></i> Creatividad</span>
+                        <span class="skill-tag"><i class="fa-solid fa-headset"></i> Atención al Cliente</span>
+                        <span class="skill-tag"><i class="fa-solid fa-laptop-code"></i> Gestión Tecnológica</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiencia y Formación -->
+            <div class="grid-two section">
+                
+                <!-- Experiencia Profesional -->
+                <div>
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <h2 class="section-title">Experiencia Profesional</h2>
+                    </div>
+                    <div class="card">
+                        <span class="card-tag">2 Años de Trayectoria</span>
+                        <h3 class="card-title">Asesora de Servicio y Atención al Cliente</h3>
+                        <p class="card-org">Sector Contact Center y BPO</p>
+                        <p class="card-desc">
+                            Gestión integral de requerimientos de usuarios, comunicación asertiva escrita y verbal, resolución oportuna de inquietudes y cumplimiento de indicadores de satisfacción y calidad en entornos dinámicos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formación Académica -->
+                <div>
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h2 class="section-title">Formación Profesional</h2>
+                    </div>
+                    <div class="card" style="margin-bottom: 1rem;">
+                        <span class="card-tag">En Curso • 6.º Semestre</span>
+                        <h3 class="card-title">Administración Tecnológica</h3>
+                        <p class="card-org">Instituto Tecnológico Metropolitano (ITM)</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-tag">Titulada</span>
+                        <h3 class="card-title">Técnico en Operaciones en Servicios de Contact Center y BPO</h3>
+                        <p class="card-org">Formación Técnica Especializada</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Certificados y Cursos Cortos -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h2 class="section-title">Certificados y Cursos Cortos</h2>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Certificación Complementaria</span>
+                    <h3 class="card-title">Derechos de Autor y Propiedad Intelectual para no Abogados</h3>
+                    <p class="card-desc">
+                        Conocimientos fundamentales sobre protección de obras literarias, creación intelectual, licenciamiento y marco legal aplicado a proyectos editoriales y contenidos creativos.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Proyectos: Pasado, Presente y Futuro -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h2 class="section-title">Proyectos: Pasado, Presente y Futuro</h2>
+                </div>
+                <div class="timeline">
+                    <!-- Pasado -->
+                    <div class="timeline-card">
+                        <div class="timeline-phase"><i class="fa-solid fa-clock-rotate-left"></i> Pasado</div>
+                        <h3 class="timeline-title">Bases de Escritura y Creación Literaria</h3>
+                        <p class="card-desc">
+                            Consolidación del estilo narrativo mediante la redacción de cuentos cortos, poesía y formación en propiedad intelectual para la protección de obras originales.
+                        </p>
+                    </div>
+
+                    <!-- Presente -->
+                    <div class="timeline-card featured">
+                        <div class="timeline-phase"><i class="fa-solid fa-star"></i> Presente</div>
+                        <h3 class="timeline-title">Publicación de Libro (Cuentos Cortos y Poesía)</h3>
+                        <p class="card-desc">
+                            Desarrollo, curaduría editorial y estructuración de obra literaria propia enfocada en relatos breves y poesía, integrando sensibilidad creativa y rigor ortográfico.
+                        </p>
+                    </div>
+
+                    <!-- Futuro -->
+                    <div class="timeline-card">
+                        <div class="timeline-phase"><i class="fa-solid fa-rocket"></i> Futuro</div>
+                        <h3 class="timeline-title">Proyección Editorial y Gestión Profesional</h3>
+                        <p class="card-desc">
+                            Lanzamiento oficial y difusión del libro de cuentos cortos y poesía, articulando competencias de administración tecnológica con proyectos culturales y editoriales.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p>© 2026 <span>Zayra Catalina Palacios Robledo</span> • Portafolio Web Profesional</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function exportarPDF() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
