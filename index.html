@@ -2,420 +2,813 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Zayra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
+<title>Zayra Catalina Palacios | Portafolio Profesional</title>
 
-        body {
-            background: #E8F5E9;
-            color: #243247;
-        }
+<meta name="description" content="Portafolio profesional de Zayra Catalina Palacios Robledo, estudiante de Tecnología en Administración del ITM, con experiencia en servicio al cliente.">
 
-        header {
-            background: linear-gradient(135deg, #00695C, #00A86B);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+<style>
+:root {
+    --militar: #354936;
+    --militar-oscuro: #243629;
+    --menta: #B9D5C2;
+    --menta-claro: #E8F0E9;
+    --blanco: #FFFFFF;
+    --fondo: #F7F8F5;
+    --texto: #303A32;
+    --gris: #737B73;
+}
 
-        header p {
-            font-size: 18px;
-            color: #D1FAE5;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        nav {
-            background: #064E3B;
-            padding: 15px;
-            text-align: center;
-        }
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
 
-        nav a:hover {
-            color: #6EE7B7;
-        }
+/* NAVEGACIÓN */
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px 20px;
-        }
+header {
+    background: var(--militar-oscuro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-        h2 {
-            color: #047857;
-            margin-bottom: 20px;
-            border-left: 5px solid #10B981;
-            padding-left: 12px;
-        }
+.logo {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: bold;
+}
 
-        .profile {
-            text-align: justify;
-            line-height: 1.9;
-        }
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    flex-wrap: wrap;
+}
 
-        .profile p {
-            margin-bottom: 15px;
-        }
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    transition: .3s;
+}
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
+nav a:hover {
+    color: var(--menta);
+}
 
-        .info-card {
-            background: #ECFDF5;
-            padding: 18px;
-            border-radius: 10px;
-            border: 1px solid #D1FAE5;
-        }
+/* PORTADA */
 
-        .info-card strong {
-            display: block;
-            color: #047857;
-            margin-bottom: 8px;
-        }
+.hero {
+    background: var(--militar);
+    color: white;
+    padding: 85px 0;
+}
 
-        .experience {
-            border-left: 3px solid #10B981;
-            padding-left: 20px;
-        }
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    align-items: center;
+    gap: 55px;
+}
 
-        .experience h3 {
-            color: #065F46;
-            margin-bottom: 8px;
-        }
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
 
-        .experience p {
-            line-height: 1.7;
-        }
+.hero h1 span {
+    color: var(--menta);
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.hero p {
+    color: #E2E9E2;
+    max-width: 590px;
+    margin-bottom: 25px;
+}
 
-        .skill {
-            background: #047857;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 25px;
-            font-size: 14px;
-        }
+.tag {
+    color: var(--menta);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
 
-        /* Botones de acción */
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 30px 20px;
-        }
+.profile-img {
+    width: 100%;
+    max-width: 340px;
+    height: 410px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 170px 170px 25px 25px;
+    border: 6px solid rgba(255,255,255,.18);
+    display: block;
+    margin: auto;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 14px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
 
-        .btn-pdf {
-            background: #065F46;
-            color: white;
-        }
+.btn {
+    padding: 13px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
 
-        .btn-pdf:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
+.btn-primary {
+    background: var(--menta);
+    color: var(--militar-oscuro);
+}
 
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
+.btn-primary:hover {
+    background: white;
+    transform: translateY(-3px);
+}
 
-        .btn-whatsapp:hover {
-            background: #1DA851;
-            transform: translateY(-2px);
-        }
+.btn-outline {
+    color: white;
+    border: 1px solid var(--menta);
+}
 
-        footer {
-            background: #064E3B;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 20px;
-        }
+.btn-outline:hover {
+    background: var(--menta);
+    color: var(--militar-oscuro);
+}
 
-        footer p {
-            color: #D1FAE5;
-            margin-top: 8px;
-        }
+/* SECCIONES */
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
-            }
+section {
+    padding: 85px 0;
+}
 
-            nav a {
-                display: inline-block;
-                margin: 8px;
-            }
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--militar);
+    margin-bottom: 12px;
+}
 
-            section {
-                padding: 22px;
-            }
+.section-subtitle {
+    color: var(--gris);
+    margin-bottom: 35px;
+}
 
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
 
-        /* Configuración para imprimir o guardar en PDF */
-        @media print {
+.about-box {
+    background: white;
+    padding: 35px;
+    border-left: 5px solid var(--menta);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.04);
+}
 
-            body {
-                background: white !important;
-                color: black;
-            }
+.about-box p {
+    color: var(--gris);
+    margin-bottom: 15px;
+}
 
-            nav,
-            .buttons-container {
-                display: none !important;
-            }
+.highlight {
+    background: var(--menta-claro);
+    padding: 30px;
+    border-radius: 10px;
+}
 
-            header {
-                background: #047857 !important;
-                color: white !important;
-                padding: 25px !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+.highlight h3 {
+    color: var(--militar);
+    margin-bottom: 15px;
+}
 
-            section {
-                box-shadow: none !important;
-                border: 1px solid #ddd;
-                break-inside: avoid;
-                margin-bottom: 15px;
-            }
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
 
-            .container {
-                width: 100%;
-                max-width: 100%;
-            }
+.skill {
+    background: var(--militar);
+    color: white;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+}
 
-            .skill {
-                background: #047857 !important;
-                color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+/* TARJETAS */
 
-            footer {
-                background: #064E3B !important;
-                color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
 
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-        }
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 9px;
+    border-bottom: 4px solid var(--menta);
+    box-shadow: 0 8px 25px rgba(0,0,0,.04);
+    transition: .3s;
+}
 
-    </style>
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--militar);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.card p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+/* PROYECTOS */
+
+.projects {
+    background: var(--menta-claro);
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.timeline-item {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.timeline-item span {
+    color: #66846D;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.timeline-item h3 {
+    color: var(--militar);
+    margin: 12px 0;
+}
+
+/* CONTACTO */
+
+.contact {
+    background: var(--militar-oscuro);
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact .section-subtitle {
+    color: #D1DDD2;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.contact-info a {
+    color: var(--menta);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: white;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: #19251B;
+    color: #BFC9BF;
+    padding: 22px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+    .hero-content,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile-img {
+        max-width: 280px;
+        height: 340px;
+    }
+
+    .cards,
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 13px;
+    }
+}
+
+/* CONFIGURACIÓN PARA PDF */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        background: white;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    header {
+        position: static;
+    }
+
+    nav ul,
+    .buttons,
+    .contact .buttons,
+    footer {
+        display: none !important;
+    }
+
+    section {
+        padding: 30px 0;
+        break-inside: avoid;
+    }
+
+    .hero {
+        padding: 35px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1.3fr .7fr;
+        gap: 20px;
+    }
+
+    .profile-img {
+        height: 250px;
+        width: 200px;
+    }
+
+    .cards,
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card,
+    .timeline-item,
+    .about-box,
+    .highlight {
+        break-inside: avoid;
+    }
+
+    a {
+        color: inherit;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Zayra</h1>
-        <p>Administradora Tecnológica | Estudiante del ITM</p>
-    </header>
+<header>
+    <nav class="container">
+        <div class="logo">Zayra Catalina.</div>
 
-    <nav>
-        <a href="#perfil">Perfil</a>
-        <a href="#datos">Datos personales</a>
-        <a href="#formacion">Formación</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#habilidades">Habilidades</a>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#acerca">Acerca de mí</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
     </nav>
+</header>
 
-    <main class="container">
+<!-- PORTADA -->
 
-        <section id="perfil">
-            <h2>Perfil Profesional</h2>
+<section class="hero" id="inicio">
+    <div class="container hero-content">
 
-            <div class="profile">
+        <div>
+            <span class="tag">Portafolio profesional</span>
+
+            <h1>
+                Zayra Catalina
+                <span>Palacios Robledo</span>
+            </h1>
+
+            <p>
+                Estudiante de sexto semestre de Tecnología en Administración
+                del Instituto Tecnológico Metropolitano (ITM), con experiencia
+                en atención al cliente, creatividad y habilidades comunicativas.
+                Comprometida con el aprendizaje y el crecimiento profesional.
+            </p>
+
+            <div class="buttons">
+                <a href="#contacto" class="btn btn-primary">
+                    Contactarme
+                </a>
+
+                <button onclick="descargarPDF()" class="btn btn-outline">
+                    ↓ Descargar portafolio PDF
+                </button>
+            </div>
+        </div>
+
+        <div>
+            <img
+                src="perfil.jpg"
+                alt="Fotografía profesional de Zayra Catalina Palacios Robledo"
+                class="profile-img"
+            >
+        </div>
+
+    </div>
+</section>
+
+<!-- ACERCA DE MÍ -->
+
+<section id="acerca">
+    <div class="container">
+
+        <span class="tag">Conóceme</span>
+        <h2 class="section-title">Acerca de mí</h2>
+
+        <div class="about-grid">
+
+            <div class="about-box">
                 <p>
-                    Soy estudiante de sexto semestre de Administración Tecnológica
-                    en el Instituto Tecnológico Metropolitano (ITM), con experiencia
-                    en análisis de costos. Me caracterizo por mi interés en los procesos
-                    administrativos, el análisis de información y la mejora continua.
-                    Busco fortalecer mis conocimientos y habilidades para aportar
-                    al crecimiento organizacional, mediante una gestión eficiente,
-                    estratégica y orientada a resultados.
+                    Soy estudiante de sexto semestre de Tecnología en
+                    Administración en el Instituto Tecnológico Metropolitano
+                    (ITM).
                 </p>
 
                 <p>
-                    Es un ciudadano global que cuenta con formación integral,
-                    con cualidades éticas y de autonomía para su desarrollo profesional,
-                    con capacidad para planear, organizar, dirigir, controlar y evaluar
-                    los procesos de gestión del conocimiento, tecnología e innovación,
-                    alineándolos con la estrategia para el logro de los objetivos de las
-                    organizaciones en las que interviene, lo cual le permite tomar
-                    decisiones en contextos complejos, dinámicos e inciertos.
+                    Cuento con dos años de experiencia en el área de atención
+                    al cliente, donde he fortalecido mis habilidades de
+                    comunicación, servicio y relacionamiento interpersonal.
                 </p>
-            </div>
-        </section>
 
-        <section id="datos">
-            <h2>Datos Personales</h2>
-
-            <div class="info-grid">
-
-                <div class="info-card">
-                    <strong>Nombre</strong>
-                    Zayra
-                </div>
-
-                <div class="info-card">
-                    <strong>Documento de identidad</strong>
-                    107526252
-                </div>
-
-                <div class="info-card">
-                    <strong>Edad</strong>
-                    25 años
-                </div>
-
-                <div class="info-card">
-                    <strong>Dirección</strong>
-                    Calle 58 #28-42
-                </div>
-
-                <div class="info-card">
-                    <strong>Correo electrónico</strong>
-                    zayrapalaciod@gmail
-                </div>
-
-                <div class="info-card">
-                    <strong>Perfil profesional</strong>
-                    Administradora Tecnológica
-                </div>
-
-            </div>
-        </section>
-
-        <section id="formacion">
-            <h2>Formación Académica</h2>
-
-            <div class="experience">
-                <h3>Administración Tecnológica</h3>
-                <p><strong>Institución:</strong> Instituto Tecnológico Metropolitano (ITM)</p>
-                <p><strong>Semestre:</strong> Sexto semestre en curso</p>
                 <p>
-                    Formación orientada a la administración, gestión de organizaciones,
-                    procesos tecnológicos, análisis y toma de decisiones empresariales.
+                    Me caracterizo por ser una persona creativa, con fortalezas
+                    en la redacción y el trabajo en equipo. Me interesa
+                    continuar desarrollando mis capacidades académicas y
+                    profesionales, aportando ideas y soluciones en cada
+                    proyecto del que hago parte.
                 </p>
             </div>
-        </section>
 
-        <section id="experiencia">
-            <h2>Experiencia Laboral</h2>
+            <div class="highlight">
+                <h3>Mis principales fortalezas</h3>
 
-            <div class="experience">
-                <h3>Analista de Costos</h3>
-                <p><strong>Empresa:</strong> Flamingo</p>
                 <p>
-                    Experiencia en el área de análisis de costos, apoyando procesos
-                    de revisión, seguimiento y análisis de información para contribuir
-                    a la gestión administrativa y financiera de la organización.
+                    Habilidades que aportan valor a mi desarrollo personal
+                    y profesional.
                 </p>
+
+                <div class="skills">
+                    <span class="skill">Redacción</span>
+                    <span class="skill">Creatividad</span>
+                    <span class="skill">Trabajo en equipo</span>
+                    <span class="skill">Atención al cliente</span>
+                    <span class="skill">Comunicación</span>
+                    <span class="skill">Servicio</span>
+                </div>
             </div>
-        </section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
+        </div>
+    </div>
+</section>
 
-            <div class="skills">
-                <span class="skill">Análisis de costos</span>
-                <span class="skill">Gestión administrativa</span>
-                <span class="skill">Análisis de información</span>
-                <span class="skill">Organización</span>
-                <span class="skill">Trabajo en equipo</span>
-                <span class="skill">Aprendizaje continuo</span>
-                <span class="skill">Gestión empresarial</span>
+<!-- FORMACIÓN -->
+
+<section id="formacion" style="background:#E8F0E9;">
+    <div class="container">
+
+        <span class="tag">Mi preparación</span>
+        <h2 class="section-title">Formación académica</h2>
+        <p class="section-subtitle">
+            Mi trayectoria educativa y aprendizaje continuo.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="card-icon">🎓</div>
+
+                <h3>Tecnología en Administración</h3>
+
+                <p>
+                    Instituto Tecnológico Metropolitano (ITM).
+                    Actualmente curso sexto semestre, fortaleciendo
+                    mis conocimientos en el ámbito administrativo
+                    y organizacional.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">📚</div>
+
+                <h3>Técnico en Operaciones de Servicios de Contact Center y BPO</h3>
+
+                <p>
+                    Formación técnica orientada al desarrollo de
+                    competencias para la prestación de servicios,
+                    atención al cliente y operaciones de contact center.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">📜</div>
+
+                <h3>Derechos de autor y propiedad intelectual para no abogados</h3>
+
+                <p>
+                    Curso de formación complementaria enfocado en
+                    el conocimiento de los derechos de autor y la
+                    propiedad intelectual.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCIA -->
+
+<section id="experiencia">
+    <div class="container">
+
+        <span class="tag">Mi trayectoria</span>
+        <h2 class="section-title">Experiencia profesional</h2>
+
+        <p class="section-subtitle">
+            Experiencia adquirida en el área de servicio y atención al cliente.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="card-icon">💬</div>
+
+                <h3>Servicio al cliente</h3>
+
+                <p>
+                    Dos años de experiencia en atención al cliente,
+                    orientada a brindar acompañamiento, atención
+                    y una experiencia de servicio satisfactoria.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🤝</div>
+
+                <h3>Trabajo colaborativo</h3>
+
+                <p>
+                    Capacidad para trabajar en equipo, mantener
+                    una comunicación efectiva y contribuir al
+                    cumplimiento de objetivos compartidos.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">✍️</div>
+
+                <h3>Comunicación y redacción</h3>
+
+                <p>
+                    Fortaleza en la expresión escrita y la
+                    comunicación, habilidades que complementan
+                    mi experiencia en el servicio al cliente.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROYECTOS -->
+
+<section class="projects" id="proyectos">
+    <div class="container">
+
+        <span class="tag">Mi evolución</span>
+        <h2 class="section-title">Proyectos y objetivos</h2>
+
+        <p class="section-subtitle">
+            Una mirada a mi recorrido, mis iniciativas actuales
+            y mis aspiraciones.
+        </p>
+
+        <div class="timeline">
+
+            <article class="timeline-item">
+                <span>Pasado</span>
+
+                <h3>Construcción de conocimientos</h3>
+
+                <p>
+                    Formación técnica en operaciones de servicios
+                    de Contact Center y BPO, que contribuyó al
+                    desarrollo de mis competencias profesionales.
+                </p>
+            </article>
+
+            <article class="timeline-item">
+                <span>Presente</span>
+
+                <h3>Proyecto editorial: libro de cuentos y poesía</h3>
+
+                <p>
+                    Proyecto de publicación de un libro que reúne
+                    cuentos cortos y poesía, como expresión de
+                    mi creatividad e interés por la escritura.
+                </p>
+            </article>
+
+            <article class="timeline-item">
+                <span>Futuro</span>
+
+                <h3>Crecimiento profesional y creativo</h3>
+
+                <p>
+                    Continuar mi formación académica, fortalecer
+                    mis competencias administrativas y avanzar
+                    en mis proyectos relacionados con la escritura
+                    y la creación literaria.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+    <div class="container">
+
+        <span class="tag">Conectemos</span>
+
+        <h2 class="section-title">¡Hablemos!</h2>
+
+        <p class="section-subtitle">
+            Estoy abierta a nuevas oportunidades, experiencias
+            y espacios de crecimiento profesional.
+        </p>
+
+        <div class="contact-info">
+
+            <div>
+                📱
+                <a href="https://wa.me/573145874566"
+                   target="_blank" rel="noopener noreferrer">
+                    314 587 4566
+                </a>
             </div>
-        </section>
 
-        <!-- BOTONES DE ACCIÓN -->
-        <div class="buttons-container">
+            <div>
+                📸
+                <a href="https://www.instagram.com/ZayraPalacios/"
+                   target="_blank" rel="noopener noreferrer">
+                    @ZayraPalacios
+                </a>
+            </div>
 
-            <!-- Botón para descargar portafolio en PDF -->
-            <button class="btn btn-pdf" onclick="descargarPDF()">
-                📄 Descargar portafolio en PDF
-            </button>
+        </div>
 
-            <!-- Botón para contactar por WhatsApp -->
-            <a
-                class="btn btn-whatsapp"
-                href="https://wa.me/573000000000?text=Hola%20Zayra%2C%20vi%20tu%20portafolio%20profesional%20y%20me%20gustar%C3%ADa%20contactarte."
-                target="_blank"
-                rel="noopener noreferrer">
-                💬 Contactarme por WhatsApp
+        <div class="buttons" style="justify-content:center;">
+
+            <a href="https://wa.me/573145874566"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary">
+                Escribir por WhatsApp
+            </a>
+
+            <a href="https://www.instagram.com/ZayraPalacios/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-outline">
+                Visitar Instagram
             </a>
 
         </div>
 
-    </main>
+    </div>
+</section>
 
-    <footer>
-        <h3>Portafolio Profesional - Zayra</h3>
-        <p>Estudiante de Administración Tecnológica | ITM</p>
-        <p>© 2026 - Todos los derechos reservados</p>
-    </footer>
+<footer>
+    <p>
+        © <span id="year"></span> Zayra Catalina Palacios Robledo.
+        Portafolio profesional.
+    </p>
+    <p>Diseñado con propósito, creatividad y profesionalismo.</p>
+</footer>
 
-    <script>
-        // Función para generar el PDF
-        function descargarPDF() {
-            window.print();
-        }
-    </script>
+<script>
+    // Actualizar año automáticamente
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+    // Exportar el portafolio a PDF
+    function descargarPDF() {
+        window.print();
+    }
+</script>
 
 </body>
 </html>
